@@ -488,3 +488,7 @@ async def broadcast_to_chat(chat_id: str, event_type: str, payload: dict):
             chat_connections[chat_id].remove(ws)
         if not chat_connections[chat_id]:
             del chat_connections[chat_id]
+            
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
